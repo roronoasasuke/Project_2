@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 222 47% 4%;
+		--foreground: 210 40% 98%;
+		--card: 222 47% 6%;
+		--card-foreground: 210 40% 96%;
+		--primary: 262 83% 58%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 217 32% 17%;
+		--secondary-foreground: 210 40% 96%;
+		--muted: 215 27% 16%;
+		--muted-foreground: 215 20% 65%;
+		--accent: 262 83% 58%;
+		--accent-foreground: 210 40% 96%;
+		--border: 215 27% 16%;
+		--input: 215 27% 16%;
+		--ring: 262 83% 58%;
+	}
+	.light {
+		--background: 210 40% 98%;
+		--foreground: 222 47% 4%;
+		--card: 0 0% 100%;
+		--card-foreground: 222 47% 4%;
+		--primary: 262 83% 58%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 210 40% 96%;
+		--secondary-foreground: 222 47% 4%;
+		--muted: 210 40% 96%;
+		--muted-foreground: 215 20% 50%;
+		--accent: 262 83% 58%;
+		--accent-foreground: 222 47% 4%;
+		--border: 214 32% 91%;
+		--input: 214 32% 91%;
+		--ring: 262 83% 58%;
+	}
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground antialiased;
+	}
+}
+
+@layer components {
+	.card {
+		@apply rounded-2xl bg-card text-card-foreground shadow-soft;
+	}
+	.btn {
+		@apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:cursor-not-allowed;
+	}
+	.btn-primary { @apply btn bg-primary text-primary-foreground hover:opacity-95; }
+	.btn-secondary { @apply btn bg-secondary text-secondary-foreground hover:opacity-95; }
+	.input { @apply w-full rounded-xl bg-input/40 border px-3 py-2 outline-none focus:ring-2 focus:ring-ring; }
+}
